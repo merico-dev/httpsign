@@ -1,4 +1,4 @@
-module github.com/gin-contrib/httpsign
+module github.com/d4x1/httpsign
 
 go 1.18
 
