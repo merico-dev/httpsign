@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -37,6 +38,20 @@ func NewDateValidator() *DateValidator {
 
 // Validate return error when checking if header date is valid or not
 func (v *DateValidator) Validate(r *http.Request) error {
+	timestampStr := r.Header.Get("timestamp")
+	if timestampStr != "" {
+		timestamp, err := strconv.ParseInt(timestampStr, 10, 64)
+		if err == nil {
+			clientTimestamp := time.Unix(timestamp, 0)
+			serverTime := time.Now()
+			start := serverTime.Add(-v.TimeGap)
+			stop := serverTime.Add(v.TimeGap)
+			if clientTimestamp.Before(start) || clientTimestamp.After(stop) {
+				return ErrDateNotInRange
+			}
+			return nil
+		}
+	}
 	t, err := http.ParseTime(r.Header.Get("date"))
 	if err != nil {
 		return newPublicError(fmt.Sprintf("Could not parse date header. Error: %s", err.Error()))
