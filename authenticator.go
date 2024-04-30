@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/gin-contrib/httpsign/validator"
+	"github.com/d4x1/httpsign/validator"
 	"github.com/gin-gonic/gin"
 )
 

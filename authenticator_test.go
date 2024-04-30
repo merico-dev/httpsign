@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gin-contrib/httpsign/crypto"
-	"github.com/gin-contrib/httpsign/validator"
+	"github.com/d4x1/httpsign/crypto"
+	"github.com/d4x1/httpsign/validator"
 
 	"github.com/stretchr/testify/require"
 
