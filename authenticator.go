@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/d4x1/httpsign/validator"
 	"github.com/gin-gonic/gin"
+	"github.com/merico-dev/httpsign/validator"
 )
 
 const (

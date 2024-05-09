@@ -1,4 +1,4 @@
-module github.com/d4x1/httpsign
+module github.com/merico-dev/httpsign
 
 go 1.18
 

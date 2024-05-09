@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/d4x1/httpsign/crypto"
-	"github.com/d4x1/httpsign/validator"
+	"github.com/merico-dev/httpsign/crypto"
+	"github.com/merico-dev/httpsign/validator"
 
 	"github.com/stretchr/testify/require"
 

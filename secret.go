@@ -1,6 +1,6 @@
 package httpsign
 
-import "github.com/d4x1/httpsign/crypto"
+import "github.com/merico-dev/httpsign/crypto"
 
 // KeyID define type
 type KeyID string
